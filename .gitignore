@@ -1,0 +1,8 @@
+private/
+reference/
+*.docx
+*.pdf
+*.exe
+*.zip
+__pycache__/
+msg.txt

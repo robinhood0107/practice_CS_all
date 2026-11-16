@@ -1,0 +1,2 @@
+#!/bin/sh
+python scripts/check_public.py files || { echo "공개 검사 실패: push를 막았다"; exit 1; }

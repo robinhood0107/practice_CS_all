@@ -1,0 +1,20 @@
+name: guard
+on:
+  push:
+  pull_request:
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 파일 검사
+        run: python3 scripts/check_public.py files
+      - name: 커밋 메시지 검사
+        run: |
+          set -e
+          for c in $(git rev-list --max-count=50 HEAD); do
+            git log -1 --format=%B "$c" > msg.txt
+            python3 scripts/check_public.py msg msg.txt
+          done

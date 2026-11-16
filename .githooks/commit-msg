@@ -1,0 +1,2 @@
+#!/bin/sh
+python scripts/check_public.py msg "$1" || { echo "커밋 메시지 검사 실패"; exit 1; }
