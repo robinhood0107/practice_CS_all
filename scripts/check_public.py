@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 50 * 1024 * 1024
 
 # 금지 경로와 확장자
-BLOCK_PATH = re.compile(r"^(private/|reference/)|\.(docx|pdf|exe|zip)$", re.I)
+BLOCK_PATH = re.compile(r"^(private|reference)(/|$)|\.(docx|pdf|exe|zip)$", re.I)
 
 # 문자열을 이어 붙여 이 파일 자체가 검사에 걸리지 않게 한다
 def j(*parts):
